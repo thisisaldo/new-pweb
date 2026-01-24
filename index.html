@@ -162,9 +162,35 @@
           </a>
         </nav>
 
-        <button class="md:hidden p-2 text-neutral-600" aria-label="Open menu">
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-600" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <iconify-icon icon="solar:hamburger-menu-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
         </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[60] hidden">
+      <div id="mobile-menu-backdrop" class="absolute inset-0 bg-neutral-900/20 backdrop-blur-sm"></div>
+      <div class="absolute top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-neutral-100 shadow-lg">
+        <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6 py-4">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold text-neutral-900">Menu</p>
+            <button id="mobile-menu-close" class="p-2 text-neutral-700" aria-label="Close menu">
+              <iconify-icon icon="solar:close-circle-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
+            </button>
+          </div>
+
+          <nav class="mt-4 grid gap-2 text-base font-medium text-neutral-900">
+            <a href="#about" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">About</a>
+            <a href="#focus" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Focus</a>
+            <a href="#work" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Work</a>
+            <a href="#mindset" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Mindset</a>
+            <a href="#contact" class="mt-2 inline-flex items-center justify-center gap-2 bg-neutral-900 text-white rounded-xl px-4 py-3 shadow-lg shadow-neutral-900/10">
+              <span>Get in touch</span>
+              <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="--iconify-stroke-width:1.5;"></iconify-icon>
+            </a>
+          </nav>
+        </div>
       </div>
     </div>
   </header>
@@ -839,7 +865,7 @@
             <h4 class="font-semibold text-neutral-900 mb-4">Social</h4>
             <ul class="text-sm text-neutral-500 space-y-3">
               <li>
-                <a href="#" class="hover:text-neutral-900 inline-flex items-center gap-2">
+                <a href="mailto:hello@thisisaldo.com" class="hover:text-neutral-900 inline-flex items-center gap-2">
                   <iconify-icon icon="solar:letter-linear" class="text-base"></iconify-icon>
                   <span>Email</span>
                 </a>
@@ -895,6 +921,36 @@
       });
     });
 
+    // Mobile menu
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMobileMenu() {
+      mobileMenu.classList.remove('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    if (mobileMenu && mobileMenuBtn && mobileMenuClose && mobileMenuBackdrop) {
+      mobileMenuBtn.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('hidden')) openMobileMenu();
+        else closeMobileMenu();
+      });
+      mobileMenuClose.addEventListener('click', closeMobileMenu);
+      mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+      mobileMenu.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeMobileMenu));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
+      });
+    }
     // Tab Switching Logic
     function openTab(tabName) {
       const allContent = document.querySelectorAll('.tab-content');
