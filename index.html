@@ -884,31 +884,31 @@
             <h4 class="font-semibold text-neutral-900 mb-4">Social</h4>
             <ul class="text-sm text-neutral-500 space-y-3">
               <li>
-                <a href="mailto:hello@thisisaldo.com" class="hover:text-neutral-900 inline-flex items-center gap-2">
+                <a id="footer-email" href="#" data-email="hello@thisisaldo.com" class="hover:text-neutral-900 inline-flex items-center gap-2">
                   <iconify-icon icon="solar:letter-linear" class="text-base"></iconify-icon>
                   <span>Email</span>
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-neutral-900 inline-flex items-center gap-2">
+                <a href="https://github.com/thisisaldo" class="hover:text-neutral-900 inline-flex items-center gap-2">
                   <iconify-icon icon="simple-icons:github" class="text-base"></iconify-icon>
                   <span>GitHub</span>
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-neutral-900 inline-flex items-center gap-2">
+                <a href="https://www.linkedin.com/notifications/?filter=all" class="hover:text-neutral-900 inline-flex items-center gap-2">
                   <iconify-icon icon="simple-icons:linkedin" class="text-base"></iconify-icon>
                   <span>LinkedIn</span>
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-neutral-900 inline-flex items-center gap-2">
+                <a href="https://x.com/thiisisaldo" class="hover:text-neutral-900 inline-flex items-center gap-2">
                   <iconify-icon icon="simple-icons:x" class="text-base"></iconify-icon>
                   <span>X</span>
                 </a>
               </li>
               <li>
-                <a href="#" class="hover:text-neutral-900 inline-flex items-center gap-2">
+                <a href="https://www.instagram.com/thiisisaldo/" class="hover:text-neutral-900 inline-flex items-center gap-2">
                   <iconify-icon icon="simple-icons:instagram" class="text-base"></iconify-icon>
                   <span>Instagram</span>
                 </a>
@@ -1014,6 +1014,48 @@
       const children = Array.from(track.children);
       children.forEach((child) => track.appendChild(child.cloneNode(true)));
       track.dataset.cloned = 'true';
+    })();
+
+    // Footer email: copy to clipboard on click
+    (function initFooterEmailCopy() {
+      const link = document.getElementById('footer-email');
+      if (!link) return;
+
+      const email = link.getAttribute('data-email') || 'hello@thisisaldo.com';
+      const label = link.querySelector('span');
+      const originalLabel = label ? label.textContent : null;
+      let resetTimer = null;
+
+      async function copyEmail() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(email);
+          return true;
+        }
+
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        const success = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        return success;
+      }
+
+      link.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const success = await copyEmail().catch(() => false);
+
+        if (!label || !originalLabel) return;
+        label.textContent = success ? 'Copied!' : 'Copy failed';
+        window.clearTimeout(resetTimer);
+        resetTimer = window.setTimeout(() => {
+          label.textContent = originalLabel;
+        }, 1200);
+      });
     })();
 
     // Footer year
