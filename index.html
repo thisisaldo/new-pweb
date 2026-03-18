@@ -47,6 +47,58 @@
     }
     .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 
+    /* Modern card hover animations */
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(99, 102, 241, 0.15);
+    }
+
+    /* Number badge animation */
+    .number-badge {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .card-hover:hover .number-badge {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px -4px rgba(79, 70, 229, 0.4);
+      animation: none;
+    }
+
+    /* Staggered card animations */
+    .stagger-1 { animation: fadeInUp 0.6s ease-out 0.1s backwards; }
+    .stagger-2 { animation: fadeInUp 0.6s ease-out 0.2s backwards; }
+    .stagger-3 { animation: fadeInUp 0.6s ease-out 0.3s backwards; }
+    .stagger-4 { animation: fadeInUp 0.6s ease-out 0.4s backwards; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Floating animation for icons */
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
     /* --- SHINY CTA BUTTON STYLES --- */
     @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
     @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
@@ -223,17 +275,17 @@
           <div class="max-w-2xl">
 	            <div class="inline-flex animate-fade-in-up text-xs font-medium text-neutral-600 bg-white/80 border-neutral-200 border rounded-full mb-8 pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm backdrop-blur gap-x-2 gap-y-2 items-center">
 	              <span class="inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
-		              <span>Growth Systems + AI Engineer</span>
+		              <span>Software Developer</span>
 	              <span class="inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
-	              <span>Amateur Boxer</span>
+	              <span>Available for Freelance</span>
 	            </div>
 
             <h1 class="leading-[1.05] text-5xl lg:text-6xl font-medium text-neutral-900 tracking-tight mb-6">
-              I help local businesses build automated growth systems that generate consistent leads and reduce admin.
+              I build websites, web apps, and AI-powered tools.
             </h1>
 
             <p class="leading-relaxed text-lg text-neutral-600 max-w-xl mb-8">
-              I help local businesses grow with local SEO, Google Ads, and automation, and I also build full-stack apps with AI integrations, automations, and agents for teams that need custom systems.
+              Landing pages, web apps, and AI integrations for small businesses and startups. Fast delivery. Fair prices.
             </p>
 
             <div class="flex flex-col sm:flex-row sm:items-center gap-4 items-start">
@@ -251,11 +303,11 @@
             <div class="mt-10 flex flex-wrap items-center gap-3 text-xs text-neutral-500">
               <div class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-2 shadow-sm">
                 <iconify-icon icon="solar:shield-check-linear" class="text-sm text-indigo-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                <span>Full-stack, reliability-first</span>
+                <span>Websites, web apps &amp; automation</span>
               </div>
               <div class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-2 shadow-sm">
                 <iconify-icon icon="solar:settings-linear" class="text-sm text-indigo-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                <span>Local SEO, Google Ads &amp; AI automations</span>
+                <span>Affordable, reliable, on-time delivery</span>
               </div>
             </div>
           </div>
@@ -304,7 +356,7 @@
 
                   <div class="flex items-end justify-end gap-2 animate-fade-in-up delay-1000 opacity-0" style="animation-fill-mode: forwards;">
                     <div class="leading-relaxed text-xs text-white bg-indigo-600 max-w-[82%] rounded-2xl pt-3 pr-3 pb-3 pl-3 shadow-lg shadow-indigo-900/20">
-                      I build automated growth systems with local SEO, Google Ads, and AI.
+                      I build websites, web apps, and automation tools for businesses.
                     </div>
                   </div>
 
@@ -313,13 +365,13 @@
                       <iconify-icon icon="solar:shield-check-linear" class="text-xs text-white/80" style="--iconify-stroke-width:1.5;"></iconify-icon>
                     </div>
                     <div class="leading-relaxed text-xs text-neutral-200 bg-white/10 max-w-[85%] border-white/10 border rounded-2xl pt-3 pr-3 pb-3 pl-3 shadow-sm backdrop-blur-md">
-                      Can you also build our app and integrate AI into the workflow?
+                      Can you build a booking system for our service business?
                     </div>
                   </div>
 
                   <div class="flex items-end justify-end gap-2 animate-fade-in-up delay-3000 opacity-0" style="animation-fill-mode: forwards;">
                     <div class="leading-relaxed text-xs text-white bg-white/10 max-w-[85%] border-white/10 border rounded-2xl pt-3 pr-3 pb-3 pl-3 shadow-sm backdrop-blur-md">
-                      Yes — I design, build, and integrate the stack end-to-end, with guardrails and monitoring.
+                      Yes — I can build custom systems that fit your workflow and scale with your needs.
                     </div>
                   </div>
                 </div>
@@ -355,382 +407,99 @@
         <div class="max-w-3xl mx-auto text-center mb-16 reveal-on-scroll">
           <span class="uppercase block text-xs font-semibold text-indigo-400 tracking-wide mb-3">About</span>
 	          <h2 class="md:text-5xl text-3xl font-medium text-white tracking-tight mb-6">
-	            Lead generation systems. Full-stack AI engineering. Built to last.
+	            Practical builds. Clear communication. Real results.
 	          </h2>
 	          <p class="leading-relaxed text-lg text-neutral-400">
-	            I help local businesses increase lead flow with local SEO, Google Ads, and automation, and I engineer full-stack AI products with integrations, automations, and agents. I focus on clear architecture, measurable outcomes, and maintainable code. Outside of work, boxing keeps me grounded in patience, fundamentals, and steady improvement.
+	            I'm a software developer who builds websites, web apps, and AI-powered tools for small businesses and startups. Whether you need a landing page that converts, a custom web app, or an AI integration that saves you time — I'll build it clean and deliver it on time.
 	          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
-          <div class="hover:bg-white/10 hover:border-white/20 transition-all duration-300 reveal-on-scroll group bg-white/5 border-white/10 border rounded-3xl pt-8 pr-8 pb-8 pl-8">
-            <div class="w-12 h-12 bg-indigo-500/10 border border-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-300 mb-6 group-hover:scale-110 transition-transform">
-              <iconify-icon icon="solar:diagram-up-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </div>
-	            <h3 class="text-xl font-semibold text-white mb-3">Lead generation systems</h3>
-	            <p class="leading-relaxed text-sm text-neutral-400">
-	              Local SEO, Google Ads, and automations connected into one measurable pipeline.
-	            </p>
-          </div>
-
-          <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 reveal-on-scroll group">
-            <div class="w-12 h-12 bg-indigo-500/10 border border-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-300 mb-6 group-hover:scale-110 transition-transform">
-              <iconify-icon icon="solar:graph-new-up-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </div>
-	            <h3 class="text-xl font-semibold text-white mb-3">Full-stack AI engineering</h3>
-	            <p class="leading-relaxed text-sm text-neutral-400">
-	              From backend to frontend to AI integrations, I ship production-ready systems with guardrails.
-	            </p>
-          </div>
-
-          <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 reveal-on-scroll group">
-            <div class="w-12 h-12 bg-indigo-500/10 border border-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-300 mb-6 group-hover:scale-110 transition-transform">
-              <iconify-icon icon="solar:repeat-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Consistency over intensity</h3>
-            <p class="leading-relaxed text-sm text-neutral-400">
-              Boxing keeps me grounded in fundamentals: repetition, recovery, and steady progress. I try to build the same way.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- SKILLS / FOCUS AREAS (kept structure: marquee section but made static to reduce gimmick) -->
     <section id="focus" class="overflow-hidden bg-white border-neutral-100 border-b pt-20 pb-20">
       <div class="lg:px-8 reveal-on-scroll text-center max-w-7xl mr-auto mb-12 ml-auto pr-6 pl-6">
-        <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Focus</span>
+        <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Services</span>
 	        <h3 class="lg:text-3xl text-2xl font-medium text-neutral-900 tracking-tight mt-2">What I build</h3>
-	        <p class="text-sm text-neutral-600 mt-3 max-w-2xl mx-auto">
-	          Growth systems for local businesses and full-stack AI products for teams that need reliable execution.
-	        </p>
       </div>
 
       <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal-on-scroll">
-          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm">
-              <iconify-icon icon="solar:server-square-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover stagger-1">
+            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm float-animation">
+              <iconify-icon icon="solar:document-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
             </div>
-	            <h4 class="font-semibold text-neutral-900 mt-4">Local SEO Systems</h4>
+	            <h4 class="font-semibold text-neutral-900 mt-4">Landing Pages</h4>
 	            <p class="text-sm text-neutral-500 mt-2 leading-snug">
-	              Google Business Profile, on-page structure, and local authority work that lifts map and organic visibility.
+	              High-converting landing pages built to turn visitors into leads or customers. Clean design, fast load times, mobile-ready.
 	            </p>
           </div>
 
-          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm">
-              <iconify-icon icon="solar:atom-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover stagger-2">
+            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm float-animation">
+              <iconify-icon icon="solar:monitor-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
             </div>
-	            <h4 class="font-semibold text-neutral-900 mt-4">Google Ads Management</h4>
+	            <h4 class="font-semibold text-neutral-900 mt-4">Business Websites</h4>
 	            <p class="text-sm text-neutral-500 mt-2 leading-snug">
-	              Campaign setup, conversion tracking, and optimization focused on qualified leads and controlled spend.
+	              Professional websites for service businesses, agencies, and startups. Built with modern tech — clear messaging, easy to navigate, ready to grow.
 	            </p>
           </div>
 
-          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm">
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover stagger-3">
+            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm float-animation">
+              <iconify-icon icon="solar:widget-3-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
+            </div>
+            <h4 class="font-semibold text-neutral-900 mt-4">Web Apps</h4>
+            <p class="text-sm text-neutral-500 mt-2 leading-snug">
+              Custom dashboards, booking systems, internal tools, and small SaaS solutions. Frontend, backend, database — fully connected and working.
+            </p>
+          </div>
+
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover stagger-4">
+            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm float-animation">
               <iconify-icon icon="solar:magic-stick-3-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
             </div>
-            <h4 class="font-semibold text-neutral-900 mt-4">AI Automations</h4>
+            <h4 class="font-semibold text-neutral-900 mt-4">AI Web Apps</h4>
             <p class="text-sm text-neutral-500 mt-2 leading-snug">
-              Automating workflows end-to-end with approvals, logging, and safe defaults.
+              Web apps with AI built in — chatbots, content tools, smart automations, and custom AI integrations. Practical AI that actually does something useful for your business.
             </p>
-          </div>
-
-          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm">
-              <iconify-icon icon="solar:shield-warning-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </div>
-            <h4 class="font-semibold text-neutral-900 mt-4">AI Agents</h4>
-            <p class="text-sm text-neutral-500 mt-2 leading-snug">
-              Task-focused agents that can plan, act, and stay within constraints you control.
-            </p>
-          </div>
-
-          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm">
-              <iconify-icon icon="solar:window-frame-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </div>
-	            <h4 class="font-semibold text-neutral-900 mt-4">Full-Stack Applications</h4>
-	            <p class="text-sm text-neutral-500 mt-2 leading-snug">
-	              APIs, databases, frontends, and infrastructure designed to support real product and growth needs.
-	            </p>
-          </div>
-
-          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-100 flex items-center justify-center text-indigo-600 shadow-sm">
-              <iconify-icon icon="solar:checklist-minimalistic-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </div>
-	            <h4 class="font-semibold text-neutral-900 mt-4">AI Integrations</h4>
-	            <p class="text-sm text-neutral-500 mt-2 leading-snug">
-	              Embedding models into products and workflows with clear contracts, testing, and observability.
-	            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (kept structure: two-column interactive section) -->
-    <section class="lg:px-8 max-w-7xl mr-auto ml-auto pt-24 pr-6 pb-24 pl-6" id="work">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-        <div class="reveal-on-scroll">
-          <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Selected Work</span>
-          <h2 class="lg:text-5xl text-4xl font-medium text-neutral-900 tracking-tight mt-2 mb-6">
-            Selected Work
-          </h2>
-	          <p class="text-lg text-neutral-600 mb-8">
-	            Projects that reflect how I build: measurable lead generation systems and full-stack AI delivery.
-	          </p>
-
-          <div class="space-y-4">
-            <button onclick="openTab('p1')" id="btn-p1" class="tab-btn w-full text-left flex gap-4 p-4 rounded-2xl bg-neutral-50 border border-neutral-200 transition-all duration-300 shadow-sm ring-1 ring-neutral-200/50">
-              <div class="mt-1 text-indigo-600">
-                <iconify-icon icon="solar:bolt-circle-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-              </div>
-              <div>
-	                <h4 class="font-semibold text-neutral-900">Local SEO + Google Ads System</h4>
-	                <p class="text-sm text-neutral-600 mt-1">
-	                  Lead generation engine with automation, tracking, and weekly optimization.
-	                </p>
-              </div>
-            </button>
-
-            <button onclick="openTab('p2')" id="btn-p2" class="tab-btn w-full text-left flex gap-4 p-4 rounded-2xl hover:bg-neutral-50 border border-transparent hover:border-neutral-100 transition-all duration-300">
-              <div class="mt-1 text-indigo-600">
-                <iconify-icon icon="solar:database-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-              </div>
-              <div>
-                <h4 class="font-semibold text-neutral-900">AI Integration for Product</h4>
-                <p class="text-sm text-neutral-600 mt-1">
-                  Integrated AI into an existing app with clear contracts and observability.
-                </p>
-              </div>
-            </button>
-
-            <button onclick="openTab('p3')" id="btn-p3" class="tab-btn w-full text-left flex gap-4 p-4 rounded-2xl hover:bg-neutral-50 border border-transparent hover:border-neutral-100 transition-all duration-300">
-              <div class="mt-1 text-indigo-600">
-                <iconify-icon icon="solar:book-2-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-              </div>
-              <div>
-                <h4 class="font-semibold text-neutral-900">Agent + Tooling System</h4>
-                <p class="text-sm text-neutral-600 mt-1">
-                  Agents paired with tools, guardrails, and human-in-the-loop checkpoints.
-                </p>
-              </div>
-            </button>
-
-            <button onclick="openTab('p4')" id="btn-p4" class="tab-btn w-full text-left flex gap-4 p-4 rounded-2xl hover:bg-neutral-50 border border-transparent hover:border-neutral-100 transition-all duration-300">
-              <div class="mt-1 text-indigo-600">
-                <iconify-icon icon="solar:widget-3-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-              </div>
-              <div>
-                <h4 class="font-semibold text-neutral-900">Full-Stack AI Application</h4>
-                <p class="text-sm text-neutral-600 mt-1">
-                  A complete product: backend, frontend, and AI features working together.
-                </p>
-              </div>
-            </button>
-          </div>
+    <!-- HOW I WORK SECTION -->
+    <section class="bg-white pt-24 pb-24" id="work">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="reveal-on-scroll text-center mb-12">
+          <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">How I Work</span>
+          <h2 class="text-3xl lg:text-4xl font-medium text-neutral-900 tracking-tight mt-2">Simple process. No surprises.</h2>
         </div>
 
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -inset-4 bg-gradient-to-r from-indigo-100 to-cyan-50 rounded-[40px] -z-10 blur-xl opacity-70"></div>
-
-          <div class="bg-neutral-900 rounded-[32px] p-8 text-white shadow-2xl relative overflow-hidden min-h-[420px] flex flex-col justify-center">
-            <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-              <iconify-icon icon="solar:layers-linear" class="text-6xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </div>
-
-            <div id="content-p1" class="tab-content active space-y-8 relative z-10">
-              <div>
-	                <p class="text-xs text-indigo-300 uppercase tracking-wider mb-4 font-semibold">Local SEO + Google Ads System</p>
-	                <h3 class="text-2xl font-semibold tracking-tight">Consistent lead flow with less admin overhead</h3>
-	                <p class="text-sm text-neutral-300 mt-3 leading-relaxed">
-	                  Built a local growth engine combining local SEO, Google Ads, and automated follow-up workflows.
-	                  Reporting and conversion tracking made weekly decisions clear and repeatable.
-	                </p>
-                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p class="text-xs text-neutral-400">Emphasis</p>
-	                    <p class="font-medium text-white mt-1">Lead quality &amp; consistency</p>
-                  </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p class="text-xs text-neutral-400">Outcome</p>
-	                    <p class="font-medium text-white mt-1">More inbound leads, less admin work</p>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-6 border-t border-white/10">
-                <div class="flex items-center justify-between">
-                  <div>
-	                    <p class="text-2xl font-semibold text-white tracking-tight">Channel visibility</p>
-	                    <p class="text-xs text-neutral-400">Rankings, ads, calls, and form leads tracked in one place</p>
-                  </div>
-                  <div class="h-10 w-10 bg-indigo-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
-                    <iconify-icon icon="solar:check-circle-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="content-p2" class="tab-content space-y-8 relative z-10">
-              <div>
-                <p class="text-xs text-indigo-300 uppercase tracking-wider mb-4 font-semibold">AI Integration for Product</p>
-                <h3 class="text-2xl font-semibold tracking-tight">AI features integrated into an existing stack</h3>
-                <p class="text-sm text-neutral-300 mt-3 leading-relaxed">
-                  Integrated AI into a live product with clear interfaces, evaluation gates, and monitoring tied to
-                  user impact. The goal was helpful AI, not just impressive demos.
-                </p>
-                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p class="text-xs text-neutral-400">Emphasis</p>
-                    <p class="font-medium text-white mt-1">Integration &amp; observability</p>
-                  </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p class="text-xs text-neutral-400">Outcome</p>
-                    <p class="font-medium text-white mt-1">AI that supports real workflows</p>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-6 border-t border-white/10">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <p class="text-2xl font-semibold text-white tracking-tight">Measured impact</p>
-                    <p class="text-xs text-neutral-400">Benchmarks tied to product outcomes</p>
-                  </div>
-                  <div class="h-10 w-10 bg-cyan-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
-                    <iconify-icon icon="solar:chart-square-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="content-p3" class="tab-content space-y-8 relative z-10">
-              <div>
-                <p class="text-xs text-indigo-300 uppercase tracking-wider mb-4 font-semibold">Agent + Tooling System</p>
-                <h3 class="text-2xl font-semibold tracking-tight">Agents that can act — with constraints</h3>
-                <p class="text-sm text-neutral-300 mt-3 leading-relaxed">
-                  Built agents that use tools to complete scoped tasks, with clear rules, evaluation, and human
-                  checkpoints. Autonomy is useful when it stays aligned with the goal.
-                </p>
-                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p class="text-xs text-neutral-400">Emphasis</p>
-                    <p class="font-medium text-white mt-1">Guardrails &amp; control</p>
-                  </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p class="text-xs text-neutral-400">Outcome</p>
-                    <p class="font-medium text-white mt-1">Autonomy where it helps</p>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-6 border-t border-white/10">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <p class="text-2xl font-semibold text-white tracking-tight">Human-in-the-loop</p>
-                    <p class="text-xs text-neutral-400">Review and override built in</p>
-                  </div>
-                  <div class="h-10 w-10 bg-indigo-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
-                    <iconify-icon icon="solar:flask-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="content-p4" class="tab-content space-y-8 relative z-10">
-              <div>
-                <p class="text-xs text-indigo-300 uppercase tracking-wider mb-4 font-semibold">Full-Stack AI Application</p>
-                <h3 class="text-2xl font-semibold tracking-tight">A full product, not just a demo</h3>
-                <p class="text-sm text-neutral-300 mt-3 leading-relaxed">
-                  Designed and shipped a complete AI application across backend, frontend, and model integration.
-                  Clear states and careful defaults reduced confusion and improved trust.
-                </p>
-                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p class="text-xs text-neutral-400">Emphasis</p>
-                    <p class="font-medium text-white mt-1">End-to-end delivery</p>
-                  </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p class="text-xs text-neutral-400">Outcome</p>
-                    <p class="font-medium text-white mt-1">A shippable product</p>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-6 border-t border-white/10">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <p class="text-2xl font-semibold text-white tracking-tight">Clear states</p>
-                    <p class="text-xs text-neutral-400">Users know what the AI is doing</p>
-                  </div>
-                  <div class="h-10 w-10 bg-cyan-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
-                    <iconify-icon icon="solar:cursor-square-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- BOXING / MINDSET SECTION (kept structure: dark CTA band section) -->
-    <section class="overflow-hidden bg-neutral-900 border-neutral-800 border-t pt-24 pb-24 relative" id="mindset">
-      <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-80 bg-indigo-600/25 blur-3xl rounded-full"></div>
-        <div class="absolute inset-0 opacity-20 brightness-100 contrast-150" style="background-image:url('https://grainy-gradients.vercel.app/noise.svg');"></div>
-      </div>
-
-      <div class="lg:px-8 z-10 reveal-on-scroll max-w-6xl mr-auto ml-auto pr-6 pl-6 relative">
-        <div class="text-center mb-10">
-          <span class="inline-flex items-center gap-2 text-xs font-semibold text-blue-300 bg-blue-500/10 border-blue-500/20 border rounded-full mb-6 pt-1 pr-3 pb-1 pl-3">
-            <iconify-icon icon="solar:boxing-linear" class="text-sm" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            Discipline Beyond Code
-          </span>
-            <h2 class="lg:text-5xl text-4xl font-medium text-white tracking-tight mb-4">Discipline Beyond Code</h2>
-            <p class="text-lg text-neutral-400 max-w-3xl mx-auto">
-            Boxing shapes how I think about engineering and research. Progress comes from repetition, fundamentals, and long-term consistency—the same principles I lean on when building systems.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
-                <iconify-icon icon="solar:repeat-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-              </div>
-              <p class="font-medium text-white">Repetition</p>
-            </div>
-            <p class="text-sm text-neutral-400 mt-3 leading-relaxed">
-              Small, repeatable improvements that compound over time.
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover stagger-1">
+            <div class="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xl font-semibold mb-4 number-badge">1</div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">You tell me what you need</h3>
+            <p class="text-sm text-neutral-600 leading-relaxed">A short message is enough. I'll ask a few questions to understand the scope.</p>
           </div>
 
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
-                <iconify-icon icon="solar:target-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-              </div>
-              <p class="font-medium text-white">Fundamentals</p>
-            </div>
-            <p class="text-sm text-neutral-400 mt-3 leading-relaxed">
-              Clear objectives, clean interfaces, careful evaluation. Fundamentals hold under pressure.
-            </p>
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover stagger-2">
+            <div class="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xl font-semibold mb-4 number-badge">2</div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">We agree on scope and price</h3>
+            <p class="text-sm text-neutral-600 leading-relaxed">Clear deliverables. Fixed price. No hidden costs.</p>
           </div>
 
-          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
-                <iconify-icon icon="solar:shield-check-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-              </div>
-              <p class="font-medium text-white">Consistency</p>
-            </div>
-            <p class="text-sm text-neutral-400 mt-3 leading-relaxed">
-              Steady progress beats bursts. The best work compounds.
-            </p>
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover stagger-3">
+            <div class="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xl font-semibold mb-4 number-badge">3</div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">I build it. You get updates.</h3>
+            <p class="text-sm text-neutral-600 leading-relaxed">Regular check-ins so you're never in the dark.</p>
+          </div>
+
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover stagger-4">
+            <div class="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xl font-semibold mb-4 number-badge">4</div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Delivered on time</h3>
+            <p class="text-sm text-neutral-600 leading-relaxed">Tested, working, ready to launch.</p>
           </div>
         </div>
       </div>
@@ -740,11 +509,8 @@
     <section class="bg-white pt-24 pb-24" id="notes">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="reveal-on-scroll max-w-3xl">
-          <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Articles</span>
-	          <h2 class="text-3xl lg:text-4xl font-medium text-neutral-900 tracking-tight mt-2">Notes on local growth systems and full-stack AI products that hold up in production.</h2>
-          <p class="text-sm text-neutral-600 mt-4 leading-relaxed">
-	            Short, practical notes on local SEO, Google Ads, AI integrations, automations, agents, and long-term reliability.
-          </p>
+          <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Notes</span>
+	          <h2 class="text-3xl lg:text-4xl font-medium text-neutral-900 tracking-tight mt-2">Quick thoughts on web development, AI tools, and freelancing.</h2>
         </div>
 
         <div class="mt-10 reveal-on-scroll">
@@ -752,8 +518,8 @@
             <div class="writing-track flex gap-4" data-writing-track>
           <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
             <p class="text-xs text-neutral-500">Coming soon</p>
-	            <p class="mt-2 font-semibold text-neutral-900">How I build local growth systems</p>
-	            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">Local SEO, Google Ads, and automation working together without chaos.</p>
+	            <p class="mt-2 font-semibold text-neutral-900">How to price freelance work as a beginner</p>
+	            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">Finding the balance between fair rates and building experience.</p>
             <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-indigo-600">
               <span>Read</span>
               <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="--iconify-stroke-width:1.5;"></iconify-icon>
@@ -762,8 +528,8 @@
 
           <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
             <p class="text-xs text-neutral-500">Coming soon</p>
-	            <p class="mt-2 font-semibold text-neutral-900">AI automations that do not break ops</p>
-	            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">Guardrails, approvals, and the details that keep systems reliable.</p>
+	            <p class="mt-2 font-semibold text-neutral-900">The freelance-to-product path</p>
+	            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">Using client work to build skills for your own SaaS product.</p>
             <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-indigo-600">
               <span>Read</span>
               <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="--iconify-stroke-width:1.5;"></iconify-icon>
@@ -772,8 +538,8 @@
 
           <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
             <p class="text-xs text-neutral-500">Coming soon</p>
-            <p class="mt-2 font-semibold text-neutral-900">Shipping AI agents with human control</p>
-            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">Let agents act, but keep the system understandable.</p>
+            <p class="mt-2 font-semibold text-neutral-900">Simple automation scripts that save hours</p>
+            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">Real examples of repetitive tasks turned into one-click solutions.</p>
             <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-indigo-600">
               <span>Read</span>
               <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="--iconify-stroke-width:1.5;"></iconify-icon>
@@ -791,32 +557,11 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-16 items-start">
           <div class="reveal-on-scroll">
 	            <h2 class="text-3xl font-medium text-neutral-900 tracking-tight mb-6">
-	              If you want more qualified local leads or stronger AI-powered product systems, let’s talk.
+	              Need something built? Let's talk.
 	            </h2>
 	            <p class="leading-relaxed text-neutral-600 mb-8">
-	              Tell me your goals, whether that is local SEO and Google Ads performance or full-stack AI engineering. If it is a fit, I will help you ship a system that performs and stays manageable.
+	              Tell me what you're working on. I'll get back to you within 24–48 hours.
 	            </p>
-
-            <div class="space-y-6">
-              <div class="flex gap-4">
-                <div class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center shrink-0">
-                  <iconify-icon icon="solar:check-circle-linear" class="text-xl text-neutral-900" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                </div>
-                <div>
-	                  <h4 class="text-sm font-semibold text-neutral-900">Clear scope, measurable execution</h4>
-	                  <p class="text-sm text-neutral-500 mt-1">Lead flow and product outcomes tracked from day one.</p>
-                </div>
-              </div>
-              <div class="flex gap-4">
-                <div class="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center shrink-0">
-                  <iconify-icon icon="solar:clock-circle-linear" class="text-xl text-neutral-900" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold text-neutral-900">Response within 24–48h</h4>
-                  <p class="text-sm text-neutral-500 mt-1">If it’s a fit, we’ll align fast and get to work.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="bg-neutral-50 border border-neutral-200 rounded-[32px] p-8 lg:p-10 reveal-on-scroll">
@@ -839,7 +584,7 @@
 
               <div>
                 <label class="block text-xs font-medium text-neutral-600 mb-1.5 ml-1">Message</label>
-                <textarea name="message" rows="4" placeholder="A brief note on what you’re building and what you need." class="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-200 focus:border-transparent transition-all"></textarea>
+                <textarea name="message" rows="4" class="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-200 focus:border-transparent transition-all"></textarea>
               </div>
 
               <button type="submit" class="w-full mt-2 bg-neutral-900 text-white font-medium h-12 rounded-xl hover:bg-neutral-800 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
@@ -848,7 +593,7 @@
               </button>
 
               <p class="text-xs text-neutral-500 text-center pt-2">
-                This form is intentionally simple. No mailing lists. No noise.
+                This form is simple. No mailing lists. No spam.
               </p>
             </form>
           </div>
@@ -865,7 +610,7 @@
             <span class="text-lg font-medium text-neutral-900 tracking-tight">This is Aldo</span>
           </a>
           <p class="leading-relaxed text-sm text-neutral-500">
-	            I build local growth systems with local SEO, Google Ads, and automation, and I engineer full-stack apps with AI integrations, automations, and agents.
+	            I build websites, web apps, and AI-powered tools for small businesses and startups.
           </p>
         </div>
 
