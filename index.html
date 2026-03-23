@@ -1,13 +1,13 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aldo — Marketing Specialist</title>
+  <title>Aldo — Lead Generation Specialist</title>
   <link rel="icon" href="logo.svg" type="image/svg+xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -74,14 +74,8 @@
     .stagger-4 { animation: fadeInUp 0.6s ease-out 0.4s backwards; }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes pulse {
@@ -193,6 +187,17 @@
       from { transform: translateX(-50%); }
       to { transform: translateX(0); }
     }
+
+    /* Experience timeline */
+    .timeline-line {
+      position: absolute;
+      left: 19px;
+      top: 28px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #e5e7eb, transparent);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .writing-track { animation: none; transform: none; }
       .shiny-cta { animation: none; }
@@ -223,8 +228,9 @@
 
         <nav class="hidden md:flex items-center gap-8 text-sm text-neutral-600 font-medium">
           <a href="#about" class="hover:text-neutral-900 transition-colors">About</a>
+          <a href="#skills" class="hover:text-neutral-900 transition-colors">Skills</a>
+          <a href="#experience" class="hover:text-neutral-900 transition-colors">Experience</a>
           <a href="#focus" class="hover:text-neutral-900 transition-colors">Services</a>
-          <a href="#work" class="hover:text-neutral-900 transition-colors">Work</a>
           <a href="#pricing" class="hover:text-neutral-900 transition-colors">Pricing</a>
           <a href="#contact" class="inline-flex items-center gap-2 hover:bg-neutral-800 transition-all shadow-neutral-500/10 hover:shadow-neutral-500/20 text-white bg-neutral-900 rounded-full pt-2 pr-4 pb-2 pl-4 shadow-lg">
             <span class="font-medium">Get in touch</span>
@@ -252,8 +258,9 @@
 
           <nav class="mt-4 grid gap-2 text-base font-medium text-neutral-900">
             <a href="#about" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">About</a>
+            <a href="#skills" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Skills</a>
+            <a href="#experience" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Experience</a>
             <a href="#focus" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Services</a>
-            <a href="#work" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Work</a>
             <a href="#pricing" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Pricing</a>
             <a href="#contact" class="mt-2 inline-flex items-center justify-center gap-2 bg-neutral-900 text-white rounded-xl px-4 py-3 shadow-lg shadow-neutral-900/10">
               <span>Get in touch</span>
@@ -273,19 +280,19 @@
 
           <!-- Left: Copy -->
           <div class="max-w-2xl">
-	            <div class="inline-flex animate-fade-in-up text-xs font-medium text-neutral-600 bg-white/80 border-neutral-200 border rounded-full mb-8 pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm backdrop-blur gap-x-2 gap-y-2 items-center">
-	              <span class="inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
-		              <span>Marketing Specialist</span>
-	              <span class="inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
-	              <span>Soccer Agent</span>
-	            </div>
+            <div class="inline-flex animate-fade-in-up text-xs font-medium text-neutral-600 bg-white/80 border-neutral-200 border rounded-full mb-8 pt-1.5 pr-3 pb-1.5 pl-3 shadow-sm backdrop-blur gap-x-2 gap-y-2 items-center">
+              <span class="inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
+              <span>Lead Generation Specialist</span>
+              <span class="inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
+              <span>Based in Melbourne</span>
+            </div>
 
             <h1 class="leading-[1.05] text-5xl lg:text-6xl font-medium text-neutral-900 tracking-tight mb-6">
-              I help local businesses get found, get clicks, and get customers.
+              I help businesses generate more leads, fill their pipeline, and grow.
             </h1>
 
             <p class="leading-relaxed text-lg text-neutral-600 max-w-xl mb-8">
-              Custom websites, SEO, and ads that actually bring people through the door. Fast delivery. Fair prices.
+              Paid ads, SEO, landing pages, and AI tools that turn strangers into paying customers. Practical strategies. Measurable results.
             </p>
 
             <div class="flex flex-col sm:flex-row sm:items-center gap-4 items-start">
@@ -294,8 +301,8 @@
                 <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="--iconify-stroke-width:1.5;"></iconify-icon>
               </a>
 
-              <a href="#work" class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 backdrop-blur px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-white transition-colors shadow-sm">
-                <span>View my work</span>
+              <a href="#experience" class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 backdrop-blur px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-white transition-colors shadow-sm">
+                <span>View my experience</span>
                 <iconify-icon icon="solar:case-linear" class="text-base text-neutral-700" style="--iconify-stroke-width:1.5;"></iconify-icon>
               </a>
             </div>
@@ -303,7 +310,7 @@
             <div class="mt-10 flex flex-wrap items-center gap-3 text-xs text-neutral-500">
               <div class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-2 shadow-sm">
                 <iconify-icon icon="solar:shield-check-linear" class="text-sm text-indigo-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                <span>Custom Websites · Local SEO · Google &amp; Meta Ads · AI Voice Agents</span>
+                <span>Google &amp; Meta Ads · Landing Pages · SEO · AI Lead Capture</span>
               </div>
               <div class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-2 shadow-sm">
                 <iconify-icon icon="solar:settings-linear" class="text-sm text-indigo-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
@@ -312,7 +319,7 @@
             </div>
           </div>
 
-          <!-- Right: Visual (kept structure: phone-like showcase) -->
+          <!-- Right: Visual -->
           <div class="flex lg:justify-end w-full h-[600px] lg:h-[700px] relative items-center justify-center">
             <div class="overflow-hidden border-[6px] bg-neutral-900 w-[340px] h-[680px] border-neutral-800/80 rounded-[45px] relative shadow-[0_0_0_12px_rgba(0,0,0,0.08),0_30px_60px_-10px_rgba(0,0,0,0.35)]">
 
@@ -334,57 +341,8 @@
                 </div>
               </div>
 
-              <!-- "Dynamic Island" -->
-              <div class="absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2 z-30 flex items-center gap-3 animate-fade-in-up delay-100 shadow-2xl w-[92%] backdrop-blur-md bg-black/80 border border-white/20">
-                <div class="h-9 w-9 bg-white/10 rounded-full flex items-center justify-center shrink-0">
-                  <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                </div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-sm font-semibold text-white leading-none">Available</p>
-                </div>
-                <div class="shrink-0 text-[10px] text-neutral-300 rounded-full border border-white/10 px-2 py-1">
-                  UTC±
-                </div>
-              </div>
-
-              <!-- Content -->
-              <div class="flex flex-col z-10 h-full pt-24 pr-4 pb-6 pl-4 relative">
-                <div class="flex-1 flex flex-col overflow-hidden mb-4 pb-2 space-y-4 justify-end">
-                  <div class="text-center text-[9px] text-neutral-500 font-medium py-1 animate-fade-in-up delay-500 opacity-0" style="animation-fill-mode: forwards;">
-                    Today • async-first
-                  </div>
-
-                  <div class="flex items-end justify-end gap-2 animate-fade-in-up delay-1000 opacity-0" style="animation-fill-mode: forwards;">
-                    <div class="leading-relaxed text-xs text-white bg-indigo-600 max-w-[82%] rounded-2xl pt-3 pr-3 pb-3 pl-3 shadow-lg shadow-indigo-900/20">
-                      I help local businesses get more customers online.
-                    </div>
-                  </div>
-
-                  <div class="flex items-end gap-2 animate-fade-in-up delay-2000 opacity-0" style="animation-fill-mode: forwards;">
-                    <div class="w-6 h-6 rounded-full bg-white/10 overflow-hidden shrink-0 border border-white/10 flex items-center justify-center">
-                      <iconify-icon icon="solar:shield-check-linear" class="text-xs text-white/80" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                    </div>
-                    <div class="leading-relaxed text-xs text-neutral-200 bg-white/10 max-w-[85%] border-white/10 border rounded-2xl pt-3 pr-3 pb-3 pl-3 shadow-sm backdrop-blur-md">
-                      Can you help our business show up on Google?
-                    </div>
-                  </div>
-
-                  <div class="flex items-end justify-end gap-2 animate-fade-in-up delay-3000 opacity-0" style="animation-fill-mode: forwards;">
-                    <div class="leading-relaxed text-xs text-white bg-white/10 max-w-[85%] border-white/10 border rounded-2xl pt-3 pr-3 pb-3 pl-3 shadow-sm backdrop-blur-md">
-                      Yes — I'll build you a custom website and optimise it so local customers find you first.
-                    </div>
-                  </div>
-                </div>
-
-                <a href="#contact" class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-full p-1 pl-4 flex items-center gap-2 hover:bg-white/15 transition-colors" aria-label="Jump to contact form">
-                  <div class="flex-1 text-neutral-400 text-xs">Message</div>
-                  <div class="h-7 w-7 bg-indigo-600 rounded-full flex items-center justify-center">
-                    <iconify-icon icon="solar:arrow-up-linear" class="text-base text-white" style="--iconify-stroke-width:1.5;"></iconify-icon>
-                  </div>
-                </a>
-
-                <div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-white/15 rounded-full"></div>
-              </div>
+              <!-- Home indicator -->
+              <div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-white/15 rounded-full z-20"></div>
             </div>
 
             <div class="absolute -right-4 top-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl -z-10"></div>
@@ -395,7 +353,7 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION (kept structure: dark band section) -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="py-24 bg-[#0a0a0a] border-y border-white/10 relative overflow-hidden">
       <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div class="absolute -top-24 -right-24 w-[36rem] h-[36rem] bg-indigo-900/25 rounded-full blur-3xl"></div>
@@ -406,22 +364,320 @@
       <div class="lg:px-8 max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
         <div class="max-w-3xl mx-auto text-center mb-16 reveal-on-scroll">
           <span class="uppercase block text-xs font-semibold text-indigo-400 tracking-wide mb-3">About</span>
-	          <h2 class="md:text-5xl text-3xl font-medium text-white tracking-tight mb-6">
-	            Practical marketing. Clear communication. Real results.
-	          </h2>
-	          <p class="leading-relaxed text-lg text-neutral-400">
-	            I'm a digital marketer and web developer who helps small businesses and local brands get more visibility and more customers online. Whether you need a custom website built from scratch, SEO that gets you ranking on Google, or ads that bring in leads — I'll handle it and keep you updated the whole way.<br><br>No confusing jargon. No wasted budget. No cookie-cutter templates. Just work that moves the needle.
-	          </p>
+          <h2 class="md:text-5xl text-3xl font-medium text-white tracking-tight mb-6">
+            Practical marketing. Clear communication. Real results.
+          </h2>
+          <p class="leading-relaxed text-lg text-neutral-400">
+            I'm a digital marketer and web developer who helps small businesses and local brands get more visibility and more customers online. Whether you need a custom website built from scratch, SEO that gets you ranking on Google, or ads that bring in leads — I'll handle it and keep you updated the whole way.<br><br>No confusing jargon. No wasted budget. No cookie-cutter templates. Just work that moves the needle.
+          </p>
         </div>
 
+        <!-- Quick stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal-on-scroll">
+          <div class="text-center bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="text-3xl font-semibold text-white">3+</p>
+            <p class="text-sm text-neutral-400 mt-1">Years in lead gen</p>
+          </div>
+          <div class="text-center bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="text-3xl font-semibold text-white">50+</p>
+            <p class="text-sm text-neutral-400 mt-1">Clients helped</p>
+          </div>
+          <div class="text-center bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="text-3xl font-semibold text-white">6</p>
+            <p class="text-sm text-neutral-400 mt-1">Services offered</p>
+          </div>
+          <div class="text-center bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="text-3xl font-semibold text-white">100%</p>
+            <p class="text-sm text-neutral-400 mt-1">Melbourne based</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SKILLS / FOCUS AREAS (kept structure: marquee section but made static to reduce gimmick) -->
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="bg-white pt-24 pb-24 border-b border-neutral-100">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="reveal-on-scroll mb-14">
+          <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Skills &amp; Expertise</span>
+          <h2 class="text-3xl lg:text-4xl font-medium text-neutral-900 tracking-tight mt-2">What I bring to the table</h2>
+          <p class="text-neutral-500 mt-3 max-w-xl leading-relaxed">A full stack of lead generation skills — from strategy and ads to automation and AI tools.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Skill group 1 -->
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 reveal-on-scroll">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600">
+                <iconify-icon icon="solar:target-linear" class="text-lg" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="font-semibold text-neutral-900">Lead Generation</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Outbound prospecting</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Inbound funnels</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Cold email</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">LinkedIn outreach</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Lead qualifying</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">CRM management</span>
+            </div>
+          </div>
+
+          <!-- Skill group 2 -->
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 reveal-on-scroll">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600">
+                <iconify-icon icon="solar:chart-2-linear" class="text-lg" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="font-semibold text-neutral-900">Paid Advertising</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Google Search Ads</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Meta Ads (FB/IG)</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Retargeting</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Audience targeting</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Ad copywriting</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Campaign optimisation</span>
+            </div>
+          </div>
+
+          <!-- Skill group 3 -->
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 reveal-on-scroll">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600">
+                <iconify-icon icon="solar:map-point-search-linear" class="text-lg" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="font-semibold text-neutral-900">SEO</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Local SEO</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">On-page optimisation</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Google Business Profile</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Keyword research</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Technical SEO</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Citation building</span>
+            </div>
+          </div>
+
+          <!-- Skill group 4 -->
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 reveal-on-scroll">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600">
+                <iconify-icon icon="solar:bolt-linear" class="text-lg" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="font-semibold text-neutral-900">AI &amp; Automation</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">AI voice agents</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">AI chat bots</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Zapier / Make.com</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Lead follow-up flows</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Workflow automation</span>
+            </div>
+          </div>
+
+          <!-- Skill group 5 -->
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 reveal-on-scroll">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600">
+                <iconify-icon icon="solar:monitor-linear" class="text-lg" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="font-semibold text-neutral-900">Web &amp; Landing Pages</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Custom websites</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Landing page design</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Conversion optimisation</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">HTML / CSS / JS</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Mobile-first design</span>
+            </div>
+          </div>
+
+          <!-- Skill group 6 -->
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6 reveal-on-scroll">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600">
+                <iconify-icon icon="solar:settings-linear" class="text-lg" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="font-semibold text-neutral-900">Tools &amp; Platforms</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Google Ads</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Meta Business Suite</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Google Analytics</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">HubSpot</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Notion</span>
+              <span class="text-xs font-medium bg-white border border-neutral-200 text-neutral-700 rounded-full px-3 py-1.5 shadow-sm">Stripe</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="bg-neutral-50 pt-24 pb-24 border-b border-neutral-100">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="reveal-on-scroll mb-14">
+          <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Experience</span>
+          <h2 class="text-3xl lg:text-4xl font-medium text-neutral-900 tracking-tight mt-2">Where I've worked</h2>
+          <p class="text-neutral-500 mt-3 max-w-xl leading-relaxed">A track record of driving measurable growth for businesses across industries.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+
+          <!-- Timeline -->
+          <div class="lg:col-span-2 space-y-0">
+
+            <!-- Job 1 -->
+            <div class="relative pl-12 pb-10 reveal-on-scroll">
+              <div class="timeline-line"></div>
+              <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-indigo-600 border-4 border-white shadow-md flex items-center justify-center">
+                <iconify-icon icon="solar:target-linear" class="text-sm text-white" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <div class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                  <div>
+                    <h3 class="font-semibold text-neutral-900 text-lg">Lead Generation Specialist</h3>
+                    <p class="text-indigo-600 font-medium text-sm">This is Aldo — Freelance</p>
+                  </div>
+                  <span class="text-xs text-neutral-500 bg-neutral-100 rounded-full px-3 py-1.5 font-medium whitespace-nowrap self-start sm:self-center">2022 – Present</span>
+                </div>
+                <p class="text-sm text-neutral-600 leading-relaxed mb-4">
+                  Running my own freelance practice helping small businesses and local brands grow their customer base through paid ads, SEO, custom websites, and AI-powered lead capture tools.
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-start gap-2 text-sm text-neutral-600">
+                    <iconify-icon icon="solar:check-circle-linear" class="text-base text-emerald-500 mt-0.5 flex-shrink-0" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                    <span>Managed Google &amp; Meta ad campaigns for 20+ local businesses</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-sm text-neutral-600">
+                    <iconify-icon icon="solar:check-circle-linear" class="text-base text-emerald-500 mt-0.5 flex-shrink-0" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                    <span>Built and deployed AI voice agents &amp; chatbots for client lead capture</span>
+                  </li>
+                  <li class="flex items-start gap-2 text-sm text-neutral-600">
+                    <iconify-icon icon="solar:check-circle-linear" class="text-base text-emerald-500 mt-0.5 flex-shrink-0" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                    <span>Delivered local SEO improvements resulting in first-page Google rankings</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="relative pl-12 pb-10 reveal-on-scroll">
+              <div class="timeline-line"></div>
+              <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-white border-2 border-neutral-200 shadow-sm flex items-center justify-center">
+                <iconify-icon icon="solar:case-linear" class="text-sm text-neutral-500" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <div class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                  <div>
+                    <h3 class="font-semibold text-neutral-900 text-lg">Business Owner</h3>
+                    <p class="text-indigo-600 font-medium text-sm">Pizzeria Mamma Mia</p>
+                  </div>
+                </div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                  Owned and operated a pizzeria, managing day-to-day operations, staffing, supplier relationships, and customer experience. Developed hands-on skills in local marketing and customer acquisition that sparked my move into digital lead generation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="relative pl-12 pb-10 reveal-on-scroll">
+              <div class="timeline-line"></div>
+              <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-white border-2 border-neutral-200 shadow-sm flex items-center justify-center">
+                <iconify-icon icon="solar:target-linear" class="text-sm text-neutral-500" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <div class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                  <div>
+                    <h3 class="font-semibold text-neutral-900 text-lg">Soccer Scout</h3>
+                    <p class="text-indigo-600 font-medium text-sm">Football Scouting</p>
+                  </div>
+                </div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                  Scouted and evaluated football talent, assessing player performance, potential, and fit. Developed strong analytical and observational skills watching games, compiling reports, and identifying standout players across competitions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="relative pl-12 pb-0 reveal-on-scroll">
+              <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-white border-2 border-neutral-200 shadow-sm flex items-center justify-center">
+                <iconify-icon icon="solar:running-linear" class="text-sm text-neutral-500" style="--iconify-stroke-width:1.5;"></iconify-icon>
+              </div>
+              <div class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm card-hover">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                  <div>
+                    <h3 class="font-semibold text-neutral-900 text-lg">Soccer Player</h3>
+                    <p class="text-indigo-600 font-medium text-sm">Competitive Football</p>
+                  </div>
+                </div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                  Competed in organised football at a competitive level. Learned teamwork, discipline, leadership under pressure, and the value of consistent training — skills that carry directly into professional life.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Education & Key Achievements sidebar -->
+          <div class="flex flex-col gap-6">
+
+            <div class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm reveal-on-scroll">
+              <h3 class="font-semibold text-neutral-900 mb-5 flex items-center gap-2">
+                <iconify-icon icon="solar:diploma-linear" class="text-base text-indigo-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                Education
+              </h3>
+              <div class="space-y-4">
+                <div class="pb-4 border-b border-neutral-100">
+                  <p class="font-medium text-neutral-900 text-sm">Bachelor of Business — Marketing</p>
+                  <p class="text-xs text-neutral-500 mt-0.5">Swinburne University of Technology</p>
+                </div>
+                <div>
+                  <p class="font-medium text-neutral-900 text-sm">Certificate IV in Real Estate Practice</p>
+                  <p class="text-xs text-neutral-500 mt-0.5">Real Estate Entry Education</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-sm reveal-on-scroll">
+              <h3 class="font-semibold text-neutral-900 mb-5 flex items-center gap-2">
+                <iconify-icon icon="solar:star-linear" class="text-base text-indigo-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                Key Achievements
+              </h3>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3 pb-3 border-b border-neutral-100">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <iconify-icon icon="solar:users-group-rounded-linear" class="text-xs text-emerald-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                  </div>
+                  <p class="text-sm text-neutral-700">Helped <span class="font-semibold text-neutral-900">50+ local businesses</span> grow their customer base online</p>
+                </div>
+                <div class="flex items-start gap-3 pb-3 border-b border-neutral-100">
+                  <div class="w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <iconify-icon icon="solar:target-linear" class="text-xs text-indigo-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                  </div>
+                  <p class="text-sm text-neutral-700">Managed <span class="font-semibold text-neutral-900">Google &amp; Meta ad campaigns</span> across multiple industries</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-7 h-7 rounded-lg bg-violet-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <iconify-icon icon="solar:bolt-linear" class="text-xs text-violet-600" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                  </div>
+                  <p class="text-sm text-neutral-700">Built and deployed <span class="font-semibold text-neutral-900">AI automations</span> that reduced manual follow-up work by hours per week</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
     <section id="focus" class="overflow-hidden bg-white border-neutral-100 border-b pt-20 pb-20">
       <div class="lg:px-8 reveal-on-scroll text-center max-w-7xl mr-auto mb-12 ml-auto pr-6 pl-6">
         <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Services</span>
-	        <h3 class="lg:text-3xl text-2xl font-medium text-neutral-900 tracking-tight mt-2">What I do</h3>
+        <h3 class="lg:text-3xl text-2xl font-medium text-neutral-900 tracking-tight mt-2">What I do</h3>
       </div>
 
       <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
@@ -432,7 +688,7 @@
             </div>
             <h4 class="font-semibold text-neutral-900 mt-4">Custom Websites</h4>
             <p class="text-sm text-neutral-500 mt-2 leading-snug">
-              Fully custom websites built from scratch — no templates, no page builders, just clean code. Mobile-friendly, fast-loading, and designed to turn visitors into customers. You get something unique to your business, not a copy-paste theme.
+              Fully custom websites built from scratch — no templates, no page builders, just clean code. Mobile-friendly, fast-loading, and designed to turn visitors into customers.
             </p>
           </div>
 
@@ -452,7 +708,7 @@
             </div>
             <h4 class="font-semibold text-neutral-900 mt-4">Google / Meta Ads Management</h4>
             <p class="text-sm text-neutral-500 mt-2 leading-snug">
-              Paid ads on Google Search and Meta (Facebook & Instagram) — set up, managed, and optimised for results. I handle the targeting, copy, creatives, and reporting so your budget goes to clicks that actually convert.
+              Paid ads on Google Search and Meta (Facebook &amp; Instagram) — set up, managed, and optimised for results. I handle the targeting, copy, creatives, and reporting so your budget converts.
             </p>
           </div>
 
@@ -462,7 +718,7 @@
             </div>
             <h4 class="font-semibold text-neutral-900 mt-4">AI Automations</h4>
             <p class="text-sm text-neutral-500 mt-2 leading-snug">
-              Cut the repetitive work out of your business. I'll build custom AI automations that handle lead follow-ups, booking confirmations, data entry, and more — saving you hours every week on autopilot.
+              Cut the repetitive work out of your business. I'll build custom AI automations that handle lead follow-ups, booking confirmations, data entry, and more — saving you hours every week.
             </p>
           </div>
 
@@ -472,7 +728,7 @@
             </div>
             <h4 class="font-semibold text-neutral-900 mt-4">AI Voice Agents</h4>
             <p class="text-sm text-neutral-500 mt-2 leading-snug">
-              Never miss a call again. I'll set up an AI voice agent that answers calls, handles enquiries, and books appointments — 24/7, without you picking up the phone. Your business stays responsive while you focus on the work.
+              Never miss a call again. I'll set up an AI voice agent that answers calls, handles enquiries, and books appointments — 24/7, without you picking up the phone.
             </p>
           </div>
 
@@ -482,7 +738,7 @@
             </div>
             <h4 class="font-semibold text-neutral-900 mt-4">AI Chat Bot</h4>
             <p class="text-sm text-neutral-500 mt-2 leading-snug">
-              Turn website visitors into leads around the clock. I'll build a custom AI chat bot that answers questions, qualifies enquiries, and captures contact details — so you never lose a potential customer.
+              Turn website visitors into leads around the clock. I'll build a custom AI chat bot that answers questions, qualifies enquiries, and captures contact details — so you never lose a customer.
             </p>
           </div>
         </div>
@@ -525,43 +781,43 @@
       </div>
     </section>
 
-    <!-- THOUGHTS / WRITING (optional) -->
-    <section class="bg-white pt-24 pb-24" id="notes">
+    <!-- NOTES / WRITING -->
+    <section class="bg-white pt-24 pb-24 border-t border-neutral-100" id="notes">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="reveal-on-scroll max-w-3xl">
           <span class="uppercase text-xs font-semibold text-indigo-600 tracking-wide">Notes</span>
-	          <h2 class="text-3xl lg:text-4xl font-medium text-neutral-900 tracking-tight mt-2">Quick thoughts on marketing, SEO, and growing a local business online.</h2>
+          <h2 class="text-3xl lg:text-4xl font-medium text-neutral-900 tracking-tight mt-2">Quick thoughts on marketing, SEO, and growing a local business online.</h2>
         </div>
 
         <div class="mt-10 reveal-on-scroll">
           <div class="writing-marquee overflow-hidden" data-writing-marquee>
             <div class="writing-track flex gap-4" data-writing-track>
-          <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
-            <p class="text-xs text-neutral-500">Coming soon</p>
-	            <p class="mt-2 font-semibold text-neutral-900">How to get your first 5 local SEO clients</p>
-	            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">A practical guide to landing your first local SEO clients from scratch.</p>
-            <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-neutral-400 cursor-default">
-              <span>Coming soon</span>
-            </div>
-          </a>
+              <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
+                <p class="text-xs text-neutral-500">Coming soon</p>
+                <p class="mt-2 font-semibold text-neutral-900">How to get your first 5 local SEO clients</p>
+                <p class="mt-2 text-sm text-neutral-600 leading-relaxed">A practical guide to landing your first local SEO clients from scratch.</p>
+                <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-neutral-400 cursor-default">
+                  <span>Coming soon</span>
+                </div>
+              </a>
 
-          <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
-            <p class="text-xs text-neutral-500">Coming soon</p>
-	            <p class="mt-2 font-semibold text-neutral-900">Why most small business websites don't convert (and how to fix it)</p>
-	            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">The common mistakes that cost local businesses leads — and what to do instead.</p>
-            <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-neutral-400 cursor-default">
-              <span>Coming soon</span>
-            </div>
-          </a>
+              <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
+                <p class="text-xs text-neutral-500">Coming soon</p>
+                <p class="mt-2 font-semibold text-neutral-900">Why most small business websites don't convert (and how to fix it)</p>
+                <p class="mt-2 text-sm text-neutral-600 leading-relaxed">The common mistakes that cost local businesses leads — and what to do instead.</p>
+                <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-neutral-400 cursor-default">
+                  <span>Coming soon</span>
+                </div>
+              </a>
 
-          <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
-            <p class="text-xs text-neutral-500">Coming soon</p>
-            <p class="mt-2 font-semibold text-neutral-900">Google Ads vs Meta Ads — which one is right for your business?</p>
-            <p class="mt-2 text-sm text-neutral-600 leading-relaxed">Breaking down which platform works best depending on your goals and budget.</p>
-            <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-neutral-400 cursor-default">
-              <span>Coming soon</span>
-            </div>
-          </a>
+              <a href="#" class="group block shrink-0 w-[300px] md:w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:bg-white transition-colors shadow-sm">
+                <p class="text-xs text-neutral-500">Coming soon</p>
+                <p class="mt-2 font-semibold text-neutral-900">Google Ads vs Meta Ads — which one is right for your business?</p>
+                <p class="mt-2 text-sm text-neutral-600 leading-relaxed">Breaking down which platform works best depending on your goals and budget.</p>
+                <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-neutral-400 cursor-default">
+                  <span>Coming soon</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -569,7 +825,7 @@
     </section>
 
     <!-- PRICING SECTION -->
-    <section class="bg-white pt-24 pb-24" id="pricing">
+    <section class="bg-white pt-24 pb-24 border-t border-neutral-100" id="pricing">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="reveal-on-scroll mb-14">
           <p class="text-xs font-semibold tracking-widest text-indigo-500 uppercase mb-3">Pricing</p>
@@ -682,17 +938,33 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION (kept structure: contact + form card) -->
-    <section class="bg-white pt-24 pb-24" id="contact">
+    <!-- CONTACT SECTION -->
+    <section class="bg-white pt-24 pb-24 border-t border-neutral-100" id="contact">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-16 items-start">
           <div class="reveal-on-scroll">
-	            <h2 class="text-3xl font-medium text-neutral-900 tracking-tight mb-6">
-	              Want more customers online? Let's talk.
-	            </h2>
-	            <p class="leading-relaxed text-neutral-600 mb-8">
-	              Tell me about your business and what you're trying to achieve. I'll get back to you within 24–48 hours.
-	            </p>
+            <h2 class="text-3xl font-medium text-neutral-900 tracking-tight mb-6">
+              Want more customers online? Let's talk.
+            </h2>
+            <p class="leading-relaxed text-neutral-600 mb-8">
+              Tell me about your business and what you're trying to achieve. I'll get back to you within 24–48 hours.
+            </p>
+
+            <!-- Contact details -->
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center gap-3 text-neutral-600">
+                <iconify-icon icon="solar:map-point-linear" class="text-lg text-indigo-600 flex-shrink-0" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                <span>Level 1/55 Collins St, Melbourne VIC 3000</span>
+              </div>
+              <div class="flex items-center gap-3 text-neutral-600">
+                <iconify-icon icon="solar:letter-linear" class="text-lg text-indigo-600 flex-shrink-0" style="--iconify-stroke-width:1.5;"></iconify-icon>
+                <span>hello@thisisaldo.com</span>
+              </div>
+              <div class="flex items-center gap-3 text-neutral-600">
+                <iconify-icon icon="simple-icons:linkedin" class="text-lg text-indigo-600 flex-shrink-0"></iconify-icon>
+                <a href="https://www.linkedin.com/in/aldodf/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 transition-colors">linkedin.com/in/aldodf</a>
+              </div>
+            </div>
           </div>
 
           <div class="bg-neutral-50 border border-neutral-200 rounded-[32px] p-8 lg:p-10 reveal-on-scroll">
@@ -741,7 +1013,7 @@
             <span class="text-lg font-medium text-neutral-900 tracking-tight">This is Aldo</span>
           </a>
           <p class="leading-relaxed text-sm text-neutral-500">
-	            I help local businesses get found online through custom websites, SEO, and paid ads.
+            I help local businesses get found online through custom websites, SEO, and paid ads.
           </p>
           <ul class="mt-4 space-y-2 text-sm text-neutral-500">
             <li class="inline-flex items-start gap-2">
@@ -760,8 +1032,9 @@
             <h4 class="font-semibold text-neutral-900 mb-4">Links</h4>
             <ul class="text-sm text-neutral-500 space-y-3">
               <li><a href="#about" class="hover:text-neutral-900">About</a></li>
+              <li><a href="#skills" class="hover:text-neutral-900">Skills</a></li>
+              <li><a href="#experience" class="hover:text-neutral-900">Experience</a></li>
               <li><a href="#focus" class="hover:text-neutral-900">Services</a></li>
-              <li><a href="#work" class="hover:text-neutral-900">Work</a></li>
               <li><a href="#pricing" class="hover:text-neutral-900">Pricing</a></li>
               <li><a href="#contact" class="hover:text-neutral-900">Contact</a></li>
             </ul>
@@ -839,26 +1112,6 @@
         if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
       });
     }
-    // Tab Switching Logic
-    function openTab(tabName) {
-      const allContent = document.querySelectorAll('.tab-content');
-      allContent.forEach(content => content.classList.remove('active'));
-
-      const selectedContent = document.getElementById('content-' + tabName);
-      if (selectedContent) selectedContent.classList.add('active');
-
-      const allButtons = document.querySelectorAll('.tab-btn');
-      allButtons.forEach(btn => {
-        btn.classList.remove('bg-neutral-50', 'border-neutral-200', 'shadow-sm', 'ring-1', 'ring-neutral-200/50');
-        btn.classList.add('border-transparent', 'hover:bg-neutral-50', 'hover:border-neutral-100');
-      });
-
-      const activeButton = document.getElementById('btn-' + tabName);
-      if (activeButton) {
-        activeButton.classList.remove('border-transparent', 'hover:bg-neutral-50', 'hover:border-neutral-100');
-        activeButton.classList.add('bg-neutral-50', 'border-neutral-200', 'shadow-sm', 'ring-1', 'ring-neutral-200/50');
-      }
-    }
 
     // Scroll Reveal Observer
     const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
@@ -901,7 +1154,6 @@
           return true;
         }
 
-        // Fallback for older browsers
         const textarea = document.createElement('textarea');
         textarea.value = email;
         textarea.setAttribute('readonly', '');
