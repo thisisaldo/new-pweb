@@ -218,61 +218,52 @@
     </div>
   </div>
 
-  <header class="relative border-b border-neutral-100/60 backdrop-blur-md bg-white/70 sticky top-0 z-50">
-    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
-      <div class="flex h-16 items-center justify-between">
-        <a href="#top" class="flex items-center gap-2 group">
-          <img src="logo.svg" alt="This is Aldo" class="w-8 h-8 object-contain">
-          <span class="text-lg font-medium text-neutral-900 tracking-tight">This is Aldo</span>
+  <header class="fixed top-4 left-0 right-0 z-50 flex flex-col items-center px-4 gap-2">
+
+    <!-- Pill bar -->
+    <div class="flex items-center gap-1 bg-white/70 backdrop-blur-xl border border-neutral-200/60 rounded-full px-3 py-2 shadow-lg shadow-neutral-900/5">
+      <a href="#top" class="flex items-center gap-2 pl-1 pr-2">
+        <img src="logo.svg" alt="This is Aldo" class="w-6 h-6 object-contain">
+        <span class="text-sm font-medium text-neutral-900 tracking-tight whitespace-nowrap">This is Aldo</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+        <a href="#about" class="text-neutral-500 hover:text-neutral-900 hover:bg-neutral-900/5 transition-all rounded-full px-3 py-1.5 whitespace-nowrap">About</a>
+        <a href="#experience" class="text-neutral-500 hover:text-neutral-900 hover:bg-neutral-900/5 transition-all rounded-full px-3 py-1.5 whitespace-nowrap">Experience</a>
+        <a href="#focus" class="text-neutral-500 hover:text-neutral-900 hover:bg-neutral-900/5 transition-all rounded-full px-3 py-1.5 whitespace-nowrap">Services</a>
+        <a href="#pricing" class="text-neutral-500 hover:text-neutral-900 hover:bg-neutral-900/5 transition-all rounded-full px-3 py-1.5 whitespace-nowrap">Pricing</a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 bg-neutral-900 text-white hover:bg-neutral-700 transition-all rounded-full px-4 py-1.5 ml-1 font-semibold whitespace-nowrap">
+          <span>Get in touch</span>
+          <iconify-icon icon="solar:arrow-right-linear" class="text-xs" style="--iconify-stroke-width:1.5;"></iconify-icon>
         </a>
+      </nav>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm text-neutral-600 font-medium">
-          <a href="#about" class="hover:text-neutral-900 transition-colors">About</a>
-          <a href="#experience" class="hover:text-neutral-900 transition-colors">Experience</a>
-          <a href="#focus" class="hover:text-neutral-900 transition-colors">Services</a>
-          <a href="#pricing" class="hover:text-neutral-900 transition-colors">Pricing</a>
-          <a href="#contact" class="inline-flex items-center gap-2 hover:bg-neutral-800 transition-all shadow-neutral-500/10 hover:shadow-neutral-500/20 text-white bg-neutral-900 rounded-full pt-2 pr-4 pb-2 pl-4 shadow-lg">
-            <span class="font-medium">Get in touch</span>
-            <iconify-icon icon="solar:arrow-right-linear" class="text-sm" style="--iconify-stroke-width:1.5;"></iconify-icon>
-          </a>
-        </nav>
-
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-600" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <iconify-icon icon="solar:hamburger-menu-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-        </button>
-      </div>
+      <!-- Mobile hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden p-1.5 text-neutral-600 hover:text-neutral-900 transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <iconify-icon icon="solar:hamburger-menu-linear" class="text-xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
+      </button>
     </div>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[60] hidden">
-      <div id="mobile-menu-backdrop" class="absolute inset-0 bg-neutral-900/20 backdrop-blur-sm"></div>
-      <div class="absolute top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-neutral-100 shadow-lg">
-        <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6 py-4">
-          <div class="flex items-center justify-between">
-            <p class="text-sm font-semibold text-neutral-900">Menu</p>
-            <button id="mobile-menu-close" class="p-2 text-neutral-700" aria-label="Close menu">
-              <iconify-icon icon="solar:close-circle-linear" class="text-2xl" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </button>
-          </div>
-
-          <nav class="mt-4 grid gap-2 text-base font-medium text-neutral-900">
-            <a href="#about" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">About</a>
-            <a href="#experience" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Experience</a>
-            <a href="#focus" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Services</a>
-            <a href="#pricing" class="rounded-xl px-3 py-2 hover:bg-neutral-100/80 transition-colors">Pricing</a>
-            <a href="#contact" class="mt-2 inline-flex items-center justify-center gap-2 bg-neutral-900 text-white rounded-xl px-4 py-3 shadow-lg shadow-neutral-900/10">
-              <span>Get in touch</span>
-              <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="--iconify-stroke-width:1.5;"></iconify-icon>
-            </a>
-          </nav>
-        </div>
-      </div>
+    <!-- Mobile dropdown — centred card below the pill -->
+    <div id="mobile-menu" class="hidden md:hidden w-full max-w-xs bg-white/85 backdrop-blur-xl border border-neutral-200/60 rounded-2xl shadow-xl shadow-neutral-900/10 overflow-hidden">
+      <nav class="grid p-3 gap-1 text-sm font-medium text-neutral-700">
+        <a href="#about" class="rounded-xl px-4 py-2.5 hover:bg-neutral-100 transition-colors">About</a>
+        <a href="#experience" class="rounded-xl px-4 py-2.5 hover:bg-neutral-100 transition-colors">Experience</a>
+        <a href="#focus" class="rounded-xl px-4 py-2.5 hover:bg-neutral-100 transition-colors">Services</a>
+        <a href="#pricing" class="rounded-xl px-4 py-2.5 hover:bg-neutral-100 transition-colors">Pricing</a>
+        <a href="#contact" class="mt-1 inline-flex items-center justify-center gap-2 bg-neutral-900 text-white rounded-xl px-4 py-2.5 font-semibold">
+          <span>Get in touch</span>
+          <iconify-icon icon="solar:arrow-right-linear" class="text-xs" style="--iconify-stroke-width:1.5;"></iconify-icon>
+        </a>
+      </nav>
     </div>
+
   </header>
 
   <main id="top">
     <!-- HERO SECTION -->
-    <section class="relative pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+    <section class="relative pt-28 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
       <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 gap-x-12 gap-y-12 items-center">
 
@@ -944,31 +935,24 @@
     // Mobile menu
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
-
-    function openMobileMenu() {
-      mobileMenu.classList.remove('hidden');
-      mobileMenuBtn.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('overflow-hidden');
-    }
 
     function closeMobileMenu() {
       mobileMenu.classList.add('hidden');
       mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('overflow-hidden');
     }
 
-    if (mobileMenu && mobileMenuBtn && mobileMenuClose && mobileMenuBackdrop) {
+    if (mobileMenu && mobileMenuBtn) {
       mobileMenuBtn.addEventListener('click', () => {
-        if (mobileMenu.classList.contains('hidden')) openMobileMenu();
-        else closeMobileMenu();
+        const isHidden = mobileMenu.classList.contains('hidden');
+        isHidden ? mobileMenu.classList.remove('hidden') : closeMobileMenu();
+        mobileMenuBtn.setAttribute('aria-expanded', String(isHidden));
       });
-      mobileMenuClose.addEventListener('click', closeMobileMenu);
-      mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
       mobileMenu.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeMobileMenu));
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.classList.contains('hidden') && !e.target.closest('header')) closeMobileMenu();
+      });
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
+        if (e.key === 'Escape') closeMobileMenu();
       });
     }
 
